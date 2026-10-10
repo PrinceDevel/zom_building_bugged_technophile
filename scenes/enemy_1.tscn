@@ -234,6 +234,7 @@ shape = SubResource("RectangleShape2D_em7m8")
 debug_color = Color(0.96974534, 0, 0.46247536, 0.41960785)
 
 [node name="attack_cooldown" type="Timer" parent="." unique_id=1772912965]
+one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1854513045]
 position = Vector2(0, -17)
