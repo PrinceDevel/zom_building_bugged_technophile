@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="item_data" format=3 uid="uid://b4vtny3fkx5bu"]
+
+[ext_resource type="Script" uid="uid://cadvlopga0meo" path="res://others/items/item.gd" id="1_lwo6i"]
+[ext_resource type="Texture2D" uid="uid://vdsrhd3d2n57" path="res://assets/instant_health.png" id="2_eh46v"]
+
+[resource]
+script = ExtResource("1_lwo6i")
+texture = ExtResource("2_eh46v")
+healthKit_id = 2
+metadata/_custom_type_script = "uid://cadvlopga0meo"

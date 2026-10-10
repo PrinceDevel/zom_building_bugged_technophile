@@ -1,0 +1,214 @@
+[gd_scene format=4 uid="uid://crmeqbfd2u6m"]
+
+[ext_resource type="PackedScene" uid="uid://b1v0xikctu2pi" path="res://scenes/player.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://blox84ou343yc" path="res://scripts/level.gd" id="1_w7c3h"]
+[ext_resource type="Texture2D" uid="uid://c7rmi10uku3mb" path="res://assets/sprites/world_tileset.png" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://pwriap63gjle" path="res://scenes/main_lift.tscn" id="6_2r41h"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7f4nq"]
+distance = -649.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_em7m8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ly64n"]
+distance = -1152.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gpp7p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2r41h"]
+texture = ExtResource("5_ppgk2")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+6:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7f4nq"]
+sources/0 = SubResource("TileSetAtlasSource_2r41h")
+
+[node name="level" type="Node2D" unique_id=841419057]
+script = ExtResource("1_w7c3h")
+
+[node name="borders" type="StaticBody2D" parent="." unique_id=19928162]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders" unique_id=282952436]
+shape = SubResource("WorldBoundaryShape2D_7f4nq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders" unique_id=1208811475]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_em7m8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders" unique_id=1017834311]
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_ly64n")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1865755329]
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_gpp7p")
+
+[node name="spawn_locations" type="Node" parent="." unique_id=1177919039]
+
+[node name="Node2D" type="Node2D" parent="spawn_locations" unique_id=1915453792]
+position = Vector2(100, 625)
+
+[node name="Node2D2" type="Node2D" parent="spawn_locations" unique_id=344873923]
+position = Vector2(200, 625)
+
+[node name="Node2D3" type="Node2D" parent="spawn_locations" unique_id=991264831]
+position = Vector2(300, 625)
+
+[node name="Node2D4" type="Node2D" parent="spawn_locations" unique_id=1480672409]
+position = Vector2(400, 625)
+
+[node name="Node2D5" type="Node2D" parent="spawn_locations" unique_id=743225892]
+position = Vector2(500, 625)
+
+[node name="Node2D6" type="Node2D" parent="spawn_locations" unique_id=1401599137]
+position = Vector2(600, 625)
+
+[node name="main_lift" parent="spawn_locations/Node2D6" unique_id=1860218583 instance=ExtResource("6_2r41h")]
+
+[node name="Node2D7" type="Node2D" parent="spawn_locations" unique_id=1721462589]
+position = Vector2(700, 625)
+
+[node name="Node2D8" type="Node2D" parent="spawn_locations" unique_id=1272163259]
+position = Vector2(800, 625)
+
+[node name="Node2D9" type="Node2D" parent="spawn_locations" unique_id=1423536086]
+position = Vector2(900, 625)
+
+[node name="Node2D10" type="Node2D" parent="spawn_locations" unique_id=1896115738]
+position = Vector2(1000, 625)
+
+[node name="Node2D11" type="Node2D" parent="spawn_locations" unique_id=187235841]
+position = Vector2(1100, 625)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=139518476]
+tile_map_data = PackedByteArray("AAD//ygAAAACAAAAAAAAACgAAAACAAAAAAABACgAAAACAAAAAAACACgAAAACAAAAAAADACgAAAACAAAAAAAEACgAAAACAAAAAAAFACgAAAACAAAAAAAGACgAAAACAAAAAAAHACgAAAACAAAAAAAIACgAAAACAAAAAAAJACgAAAACAAAAAAAKACgAAAACAAAAAAALACgAAAACAAAAAAAMACgAAAACAAAAAAANACgAAAACAAAAAAAOACgAAAACAAAAAAAPACgAAAACAAAAAAAQACgAAAACAAAAAAARACgAAAACAAAAAAASACgAAAACAAAAAAATACgAAAACAAAAAAAUACgAAAACAAAAAAAVACgAAAACAAAAAAAWACgAAAACAAAAAAAXACgAAAACAAAAAAAYACgAAAACAAAAAAAZACgAAAACAAAAAAAaACgAAAACAAAAAAAbACgAAAACAAAAAAAcACgAAAACAAAAAAAdACgAAAACAAAAAAAeACgAAAACAAAAAAAfACgAAAACAAAAAAAgACgAAAACAAAAAAAhACgAAAACAAAAAAAiACgAAAACAAAAAAAjACgAAAACAAAAAAAkACgAAAACAAAAAAAlACgAAAACAAAAAAAmACgAAAACAAAAAAAnACgAAAACAAAAAAAoACgAAAACAAAAAAApACgAAAACAAAAAAAqACgAAAACAAAAAAArACgAAAACAAAAAAAsACgAAAACAAAAAAAtACgAAAACAAAAAAAuACgAAAACAAAAAAAvACgAAAACAAAAAAAwACgAAAACAAAAAAAxACgAAAACAAAAAAAyACgAAAACAAAAAAAzACgAAAACAAAAAAA0ACgAAAACAAAAAAA1ACgAAAACAAAAAAA2ACgAAAACAAAAAAA3ACgAAAACAAAAAAA4ACgAAAACAAAAAAA5ACgAAAACAAAAAAA6ACgAAAACAAAAAAA7ACgAAAACAAAAAAA8ACgAAAACAAAAAAA9ACgAAAACAAAAAAA+ACgAAAACAAAAAAA/ACgAAAACAAAAAABAACgAAAACAAAAAABBACgAAAACAAAAAABCACgAAAACAAAAAABDACgAAAACAAAAAABEACgAAAACAAAAAABFACgAAAACAAAAAABGACgAAAACAAAAAABHACgAAAACAAAAAABIACgAAAACAAAAAABIAP//AAACAAAAAABIAAAAAAACAAAAAABIAAEAAAACAAAAAABIAAIAAAACAAAAAABIAAMAAAACAAAAAABIAAQAAAACAAAAAABIAAUAAAACAAAAAABIAAYAAAACAAAAAABIAAcAAAACAAAAAABIAAgAAAACAAAAAABIAAkAAAACAAAAAABIAAoAAAACAAAAAABIAAsAAAACAAAAAABIAAwAAAACAAAAAABIAA0AAAACAAAAAABIAA4AAAACAAAAAABIAA8AAAACAAAAAABIABAAAAACAAAAAABIABEAAAACAAAAAABIABIAAAACAAAAAABIABMAAAACAAAAAABIABQAAAACAAAAAABIABUAAAACAAAAAABIABYAAAACAAAAAABIABcAAAACAAAAAABIABgAAAACAAAAAABIABkAAAACAAAAAABIABoAAAACAAAAAABIABsAAAACAAAAAABIABwAAAACAAAAAABIAB0AAAACAAAAAABIAB4AAAACAAAAAABIAB8AAAACAAAAAABIACAAAAACAAAAAABIACEAAAACAAAAAABIACIAAAACAAAAAABIACMAAAACAAAAAABIACQAAAACAAAAAABIACUAAAACAAAAAABIACYAAAACAAAAAABIACcAAAACAAAAAAD/////AAACAAAAAAD//wAAAAACAAAAAAD//wEAAAACAAAAAAD//wIAAAACAAAAAAD//wMAAAACAAAAAAD//wQAAAACAAAAAAD//wUAAAACAAAAAAD//wYAAAACAAAAAAD//wcAAAACAAAAAAD//wgAAAACAAAAAAD//wkAAAACAAAAAAD//woAAAACAAAAAAD//wsAAAACAAAAAAD//wwAAAACAAAAAAD//w0AAAACAAAAAAD//w4AAAACAAAAAAD//w8AAAACAAAAAAD//xAAAAACAAAAAAD//xEAAAACAAAAAAD//xIAAAACAAAAAAD//xMAAAACAAAAAAD//xQAAAACAAAAAAD//xUAAAACAAAAAAD//xYAAAACAAAAAAD//xcAAAACAAAAAAD//xgAAAACAAAAAAD//xkAAAACAAAAAAD//xoAAAACAAAAAAD//xsAAAACAAAAAAD//xwAAAACAAAAAAD//x0AAAACAAAAAAD//x4AAAACAAAAAAD//x8AAAACAAAAAAD//yAAAAACAAAAAAD//yEAAAACAAAAAAD//yIAAAACAAAAAAD//yMAAAACAAAAAAD//yQAAAACAAAAAAD//yUAAAACAAAAAAD//yYAAAACAAAAAAD//ycAAAACAAAAAAACACcAAAAFAAcAAAADACcAAAAHAAYAAAAEACcAAAAHAAYAAAAHACcAAAAFAAcAAAAIACcAAAAIAAYAAAAJACcAAAAIAAYAAAAOACcAAAAIAAYAAAAQACcAAAAHAAYAAAAXACcAAAAHAAYAAAAYACcAAAAHAAYAAAAZACcAAAAHAAYAAAAcACcAAAAFAAYAAAAdACcAAAAFAAYAAAAeACcAAAAFAAcAAAAgACcAAAAIAAYAAAAjACcAAAAHAAYAAAAkACcAAAAFAAcAAAAlACcAAAAFAAcAAAAnACcAAAAIAAYAAAArACcAAAAFAAcAAAAtACcAAAAHAAYAAAAuACcAAAAFAAYAAAAvACcAAAAIAAYAAAAxACcAAAAFAAYAAAAyACcAAAAHAAYAAAAzACcAAAAHAAYAAAA2ACcAAAAFAAYAAAA5ACcAAAAIAAYAAAA6ACcAAAAIAAYAAAA7ACcAAAAIAAYAAAA9ACcAAAAFAAcAAAA/ACcAAAAHAAYAAABAACcAAAAHAAYAAABBACcAAAAHAAYAAABCACcAAAAIAAYAAABEACcAAAAHAAYAAABGACcAAAAHAAYAAAA=")
+tile_set = SubResource("TileSet_7f4nq")
+
+[node name="player" parent="." unique_id=389516492 instance=ExtResource("1_2q6dc")]
+position = Vector2(573, 549)

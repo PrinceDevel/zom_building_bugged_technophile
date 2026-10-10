@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="weapon_data" format=3 uid="uid://k0guhjkibk6n"]
+
+[ext_resource type="Script" uid="uid://b4k2mqk52y2hf" path="res://others/weapons/weapon_data.gd" id="1_vvdrw"]
+[ext_resource type="Texture2D" uid="uid://bux53kbcr6f77" path="res://assets/bullet3.png" id="1_yar6r"]
+[ext_resource type="AudioStream" uid="uid://dfq3g5yxh3b2o" path="res://assets/audio/gunshots/deagle-shot-sound.mp3" id="2_4dcfv"]
+[ext_resource type="AudioStream" uid="uid://hvebgie0bx22" path="res://assets/audio/reload/freesound_community-pistol-cock-6014.mp3" id="3_4dcfv"]
+[ext_resource type="Texture2D" uid="uid://clsfhisr2jdo1" path="res://assets/free-guns-pixel-art/Pistol-1.png" id="5_yar6r"]
+
+[resource]
+script = ExtResource("1_vvdrw")
+weapon_texture = ExtResource("5_yar6r")
+weapon_id = 0
+bullet_speed = 7
+bullet_id = 0
+bullet_sprite = ExtResource("1_yar6r")
+rate_of_fire = 0.2
+bullet_dmg = 1000
+bullet_spread = 2
+mag_size = 16
+shells = 2
+reload_audio = ExtResource("3_4dcfv")
+gunshot_audio = ExtResource("2_4dcfv")
+metadata/_custom_type_script = "uid://b4k2mqk52y2hf"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="item_data" format=3 uid="uid://dnk1t2jvs5un2"]
+
+[ext_resource type="Script" uid="uid://cadvlopga0meo" path="res://others/items/item.gd" id="1_pmbpy"]
+[ext_resource type="Resource" uid="uid://i3bm5gh84s6v" path="res://others/weapons/AR.tres" id="2_ha61c"]
+[ext_resource type="Texture2D" uid="uid://ml0ytfbq7kwo" path="res://assets/free-guns-pixel-art/Assaut-rifle-1.png" id="2_p0s6a"]
+
+[resource]
+script = ExtResource("1_pmbpy")
+texture = ExtResource("2_p0s6a")
+weapon = true
+weapon_resource = ExtResource("2_ha61c")
+metadata/_custom_type_script = "uid://cadvlopga0meo"

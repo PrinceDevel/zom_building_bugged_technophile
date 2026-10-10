@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bae86d87ykh3u"]
+
+[ext_resource type="Script" uid="uid://kkrgk55jdaah" path="res://scripts/blood.gd" id="1_kl077"]
+
+[sub_resource type="Curve" id="Curve_7f4nq"]
+_data = [Vector2(0.0042372867, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.40707964), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="blood" type="CPUParticles2D" unique_id=887049082]
+z_index = 1
+amount = 32
+lifetime = 0.2
+explosiveness = 1.0
+randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 50)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_7f4nq")
+color = Color(18.892157, 0, 0, 0.9843137)
+script = ExtResource("1_kl077")
+
+[node name="Timer" type="Timer" parent="." unique_id=1824703518]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

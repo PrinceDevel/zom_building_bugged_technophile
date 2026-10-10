@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://pwriap63gjle"]
+
+[ext_resource type="Script" uid="uid://b3y20utojtmi7" path="res://scripts/level/main_lift.gd" id="1_gmpph"]
+[ext_resource type="Script" uid="uid://b1wpmo6jf0bmc" path="res://scripts/level/mechanism.gd" id="3_ie23e"]
+[ext_resource type="Texture2D" uid="uid://c3s3v5bh5ser7" path="res://assets/sprites/UI_Flat_Bar10a.png" id="3_lukpm"]
+[ext_resource type="Texture2D" uid="uid://bllqod0rwlnro" path="res://assets/sprites/UI_Flat_Bar07a.png" id="5_ie23e"]
+[ext_resource type="Texture2D" uid="uid://d0dlbaparnvoo" path="res://assets/sprites/UI_Flat_IconLine01a.png" id="6_xuf1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f4nq"]
+
+[sub_resource type="Curve2D" id="Curve2D_lukpm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -14, -39, 0, 0, 0, 0, 14, -39, 0, 0, 0, 0, -14, -39)
+}
+point_count = 3
+
+[node name="main_lift" type="Area2D" unique_id=1860218583]
+z_index = 1
+position = Vector2(0, -27)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_gmpph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=232093320]
+shape = SubResource("RectangleShape2D_7f4nq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=668970574]
+
+[node name="Label" type="Label" parent="." unique_id=535784327]
+visible = false
+offset_left = -48.0
+offset_top = -36.0
+offset_right = 50.0
+offset_bottom = -13.0
+text = "'E' to interact/close"
+
+[node name="mechanism" type="Node2D" parent="." unique_id=1524635317]
+script = ExtResource("3_ie23e")
+
+[node name="BG" type="TextureRect" parent="mechanism" unique_id=2121903068]
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 16.0
+offset_bottom = -33.0
+texture = ExtResource("3_lukpm")
+
+[node name="zone" type="TextureRect" parent="mechanism" unique_id=718086886]
+offset_left = -10.0
+offset_top = -45.0
+offset_right = 10.0
+offset_bottom = -33.0
+texture = ExtResource("5_ie23e")
+expand_mode = 1
+
+[node name="Path2D" type="Path2D" parent="mechanism" unique_id=71721168]
+position = Vector2(-1.1368684e-13, 3.8146973e-06)
+scale = Vector2(1, 1.0000001)
+curve = SubResource("Curve2D_lukpm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="mechanism/Path2D" unique_id=1474751927]
+position = Vector2(-0.9836045, -39)
+progress = 13.020004
+rotates = false
+
+[node name="needle" type="Sprite2D" parent="mechanism/Path2D/PathFollow2D" unique_id=934973586]
+rotation = 1.5707964
+scale = Vector2(1.6699997, 0.51)
+texture = ExtResource("6_xuf1x")
+
+[node name="ProgressBar" type="ProgressBar" parent="mechanism" unique_id=850368831]
+offset_left = -51.0
+offset_top = -56.0
+offset_right = 52.0
+offset_bottom = -49.0
+step = 0.1
+show_percentage = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

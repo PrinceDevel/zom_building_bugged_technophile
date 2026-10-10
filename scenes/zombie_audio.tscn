@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://0km4k7d3p2s3"]
+
+[ext_resource type="Script" uid="uid://cky2m75mrb1pl" path="res://scripts/zombie_audio.gd" id="1_qwygn"]
+[ext_resource type="AudioStream" uid="uid://ddbbdpryfeoqe" path="res://assets/audio/elevator/elevator-door-closing-sound.mp3" id="2_novlw"]
+[ext_resource type="AudioStream" uid="uid://2iuum24i8qc" path="res://assets/audio/zombies/zombie-roar-male.mp3" id="4_td86v"]
+[ext_resource type="AudioStream" uid="uid://b1gjre7iep1qp" path="res://assets/audio/zombies/zombies.mp3" id="5_6n5qu"]
+
+[node name="audio_player" type="Node2D" unique_id=1714506076]
+script = ExtResource("1_qwygn")
+zombie_audios = Array[AudioStream]([ExtResource("4_td86v"), ExtResource("5_6n5qu")])
+
+[node name="spawn_audio_player" type="AudioStreamPlayer2D" parent="." unique_id=517460461]
+stream = ExtResource("2_novlw")
+pitch_scale = 1.5
+max_distance = 1000.0
+attenuation = 6.727169
+
+[node name="zombie_audio_player" type="AudioStreamPlayer2D" parent="." unique_id=757688369]
+stream = ExtResource("5_6n5qu")
+volume_db = -5.0
+max_distance = 500.0
+attenuation = 7.4642572
+
+[node name="cooldown" type="Timer" parent="." unique_id=1253833343]
+autostart = true
+
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

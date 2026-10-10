@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="weapon_data" format=3 uid="uid://i3bm5gh84s6v"]
+
+[ext_resource type="Script" uid="uid://b4k2mqk52y2hf" path="res://others/weapons/weapon_data.gd" id="1_l1e0n"]
+[ext_resource type="Texture2D" uid="uid://sgqag85mu0g4" path="res://assets/bullet2.png" id="1_yagfa"]
+[ext_resource type="AudioStream" uid="uid://du1ct0s8uaer3" path="res://assets/audio/gunshots/the-receding-echo-after-a-pistol-shot.mp3" id="2_0yr8q"]
+[ext_resource type="AudioStream" uid="uid://c40fyotbippff" path="res://assets/audio/reload/calm-slow-reloading.mp3" id="3_qs04a"]
+[ext_resource type="Texture2D" uid="uid://ml0ytfbq7kwo" path="res://assets/free-guns-pixel-art/Assaut-rifle-1.png" id="5_yagfa"]
+
+[resource]
+script = ExtResource("1_l1e0n")
+weapon_texture = ExtResource("5_yagfa")
+bullet_speed = 8
+bullet_sprite = ExtResource("1_yagfa")
+bullet_dmg = 35
+mag_size = 40
+reload_time = 1.5
+recoil = 3
+reload_audio = ExtResource("3_qs04a")
+gunshot_audio = ExtResource("2_0yr8q")
+metadata/_custom_type_script = "uid://b4k2mqk52y2hf"

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="weapon_data" format=3 uid="uid://dalkv67bm7ant"]
+
+[ext_resource type="Script" uid="uid://b4k2mqk52y2hf" path="res://others/weapons/weapon_data.gd" id="1_k65oa"]
+[ext_resource type="Texture2D" uid="uid://di34yi6hokobn" path="res://assets/bullet1.png" id="1_vpp3b"]
+[ext_resource type="AudioStream" uid="uid://cl8yeja126e2a" path="res://assets/audio/gunshots/quick-reload-cutoff.mp3" id="2_jb33w"]
+[ext_resource type="AudioStream" uid="uid://d0lq3qxckejkw" path="res://assets/audio/reload/freesound_community-shotgun-reload-sfx-36524.mp3" id="3_vpp3b"]
+[ext_resource type="Texture2D" uid="uid://cx21uaq3c4w37" path="res://assets/free-guns-pixel-art/Shotgun-3.png" id="5_vpp3b"]
+
+[resource]
+script = ExtResource("1_k65oa")
+weapon_texture = ExtResource("5_vpp3b")
+weapon_id = 2
+bullet_speed = 7
+bullet_id = 2
+bullet_sprite = ExtResource("1_vpp3b")
+rate_of_fire = 0.75
+bullet_dmg = 15
+bullet_spread = 8
+mag_size = 16
+reload_time = 2.0
+recoil = 5
+shells = 6
+reload_audio = ExtResource("3_vpp3b")
+gunshot_audio = ExtResource("2_jb33w")
+metadata/_custom_type_script = "uid://b4k2mqk52y2hf"
