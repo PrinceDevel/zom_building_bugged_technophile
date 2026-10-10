@@ -12,7 +12,7 @@ func _ready() -> void:
 	tween.set_loops()
 	tween.set_trans(Tween.TransitionType.TRANS_SINE)
 	tween.set_ease(Tween.EaseType.EASE_IN_OUT)
-	tween.tween_property(sprite,"offset",Vector2(0,-100),dutration)
+	tween.tween_property(sprite,"offset",Vector2(0,-30),dutration)
 	tween.tween_property(sprite,"offset",Vector2(0,0),dutration)
 	
 func _on_body_entered(body: Node2D) -> void:

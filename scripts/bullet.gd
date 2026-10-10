@@ -28,5 +28,4 @@ func _on_body_entered(body: Node2D) -> void:
 		var blood = blood.instantiate()
 		get_parent().add_child(blood)
 		blood.global_position = global_position
-	else:
-		queue_free()
+	queue_free()

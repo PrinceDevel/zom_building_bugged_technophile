@@ -31,6 +31,7 @@ func level_setup():
 	main_lift_setup()
 	enemy_lift_setup()
 	enemy_spawn_manager.change_difficulty(level_number)
+	label_3.text = "FLOOR : " + str(level_number)
 
 
 func main_lift_setup():
